@@ -5,7 +5,7 @@ export default function Services() {
   const wa = (title) => `https://wa.me/${whatsapp}?text=Hello, I'd like to enquire about your ${title} service.`
 
   return (
-    <section id="services" className="section-pad" style={{ background: #ffffff }}>
+    <section id="services" className="section-pad" style={{ background: '#ffffff' }}>
       <div className="max-w-7xl mx-auto">
 
         {/* Section Header */}
@@ -18,7 +18,7 @@ export default function Services() {
           </span>
           <h2
             className="font-display font-light mb-6"
-            style={{ color: 'var(--text)', fontSize: 'clamp(2.5rem, 5vw, 4.5rem)' }}
+            style={{ color: '#000000', fontSize: 'clamp(2.5rem, 5vw, 4.5rem)' }}
           >
             Our Services
           </h2>

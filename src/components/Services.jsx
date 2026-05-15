@@ -5,7 +5,7 @@ export default function Services() {
   const wa = (title) => `https://wa.me/${whatsapp}?text=Hello, I'd like to enquire about your ${title} service.`
 
   return (
-    <section id="services" className="section-pad" style={{ background: 'var(--background)' }}>
+    <section id="services" className="section-pad" style={{ background: #ffffff }}>
       <div className="max-w-7xl mx-auto">
 
         {/* Section Header */}

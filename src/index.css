@@ -1,0 +1,168 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* ════════════════════════════════════════════════════════
+   KENDIL BRAND PALETTE — extracted from logo
+   ─ Logo analysis:
+     • Background:  Pure black circle    → #090909
+     • Gold icon:   Rich warm gold       → #D4A830  (primary accent)
+     • Gold light:  Highlight shimmer    → #F0C84A  (hover / glow)
+     • Gold dark:   Shadow gold          → #9A7520  (depth)
+     • White text:  Clean white          → #FFFFFF
+     • Off-white:   Soft cream           → #F2EDE4  (light bg)
+     • Panel dark:  Near-black surface   → #111111
+     • Panel mid:   Dark card surface    → #1A1A1A
+     • Muted:       Subdued body text    → #8A8A8A
+   ════════════════════════════════════════════════════════ */
+:root {
+  --black:       #343438;
+  --panel-dark:  #3A3A40;
+  --panel-mid:   #1A1A1A;
+  --panel-light: #242424;
+
+  --gold:        #D4A830;
+  --gold-light:  #F0C84A;
+  --gold-dark:   #9A7520;
+  --gold-muted:  rgba(212, 168, 48, 0.15);
+
+  --white:       #FFFFFF;
+  --off-white:   #F2EDE4;
+  --muted:       #8A8A8A;
+  --muted-light: rgba(255,255,255,0.5);
+
+  --border:      rgba(212, 168, 48, 0.18);
+  --border-soft: rgba(255, 255, 255, 0.06);
+}
+
+/* ─── Base ───────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--black);
+  color: var(--off-white);
+  -webkit-font-smoothing: antialiased;
+  font-weight: 300;
+}
+
+.font-display { font-family: 'Cormorant Garamond', serif; }
+
+/* ─── Layout ─────────────────────────────────────────── */
+.section-pad { padding: 6rem 1.5rem; }
+@media (min-width: 768px)  { .section-pad { padding: 8rem 3rem; } }
+@media (min-width: 1024px) { .section-pad { padding: 9rem 6rem; } }
+
+/* ─── Section Label ──────────────────────────────────── */
+.section-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 1rem;
+}
+
+/* ─── Gold divider ───────────────────────────────────── */
+.gold-rule {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+.gold-rule::before,
+.gold-rule::after {
+  content: '';
+  display: block;
+  height: 1px;
+  width: 2.5rem;
+  background: linear-gradient(to right, transparent, var(--gold));
+}
+.gold-rule::after {
+  background: linear-gradient(to left, transparent, var(--gold));
+}
+
+/* ─── Buttons ────────────────────────────────────────── */
+.btn-gold {
+  background: var(--gold);
+  color: var(--black);
+  border: 1.5px solid var(--gold);
+  padding: 0.875rem 2rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: all 0.35s ease;
+  display: inline-block;
+  cursor: pointer;
+}
+.btn-gold:hover {
+  background: var(--gold-light);
+  border-color: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(212, 168, 48, 0.3);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--off-white);
+  border: 1.5px solid rgba(242, 237, 228, 0.3);
+  padding: 0.875rem 2rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: all 0.35s ease;
+  display: inline-block;
+}
+.btn-ghost:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+/* ─── Scroll Reveal ──────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.85s ease, transform 0.85s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.10s; }
+.reveal-delay-2 { transition-delay: 0.20s; }
+.reveal-delay-3 { transition-delay: 0.30s; }
+.reveal-delay-4 { transition-delay: 0.40s; }
+.reveal-delay-5 { transition-delay: 0.50s; }
+
+/* ─── Film strip decoration ───────────────────────────── */
+.film-strip {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+.film-hole {
+  width: 8px;
+  height: 8px;
+  border: 1px solid var(--gold);
+  opacity: 0.5;
+}
+
+/* ─── Gold glow ──────────────────────────────────────── */
+.gold-glow { box-shadow: 0 0 40px rgba(212, 168, 48, 0.15); }
+
+/* ─── Card surface ───────────────────────────────────── */
+.card {
+  background: var(--panel-mid);
+  border: 1px solid var(--border);
+  transition: all 0.4s ease;
+}
+.card:hover {
+  border-color: rgba(212, 168, 48, 0.45);
+  box-shadow: 0 12px 48px rgba(212, 168, 48, 0.08);
+  transform: translateY(-2px);
+}

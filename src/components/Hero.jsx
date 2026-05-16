@@ -68,13 +68,13 @@ export default function Hero() {
         {/* Headlines */}
         <h1
           className="font-display font-light leading-[1.05] mb-2"
-          style={{ color: 'var(--background)', fontSize: 'clamp(2.8rem, 8vw, 6.5rem)' }}
+          style={{ color: 'var(--gold)', fontSize: 'clamp(2.8rem, 8vw, 6.5rem)' }}
         >
           {hero.headline_light}
         </h1>
         <h1
           className="font-display font-light italic leading-[1.05] mb-10"
-          style={{ color: 'var(--accent)', fontSize: 'clamp(2.8rem, 8vw, 6.5rem)' }}
+          style={{ color: 'var(--gold)', fontSize: 'clamp(2.8rem, 8vw, 6.5rem)' }}
         >
           {hero.headline_italic}
         </h1>

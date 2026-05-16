@@ -58,7 +58,7 @@ export default function Testimonials() {
               className={`reveal reveal-delay-${i + 1} relative p-8 flex flex-col gap-5`}
               style={{
                 background: 'var(--background)',
-                border: '1px solid rgba(212,168,48,0.12)',
+                border: '1px solid var(--gold)',
               }}
             >
               {/* Quote mark */}
@@ -71,14 +71,14 @@ export default function Testimonials() {
 
               <StarRating />
 
-              <p className="font-display text-base leading-relaxed font-light flex-1 italic" style={{ color: 'var(--muted)' }}>
+              <p className="font-display text-base leading-relaxed font-light flex-1" style={{ color: 'var(--black)' }}>
                 "{t.text}"
               </p>
 
               {/* Author */}
               <div
                 className="flex items-center gap-3 pt-4 border-t"
-                style={{ borderColor: 'rgba(212,168,48,0.12)' }}
+                style={{ borderColor: 'var(--gold)' }}
               >
                 {t.avatar ? (
                   <img
@@ -91,8 +91,10 @@ export default function Testimonials() {
                   <Initials name={t.name} />
                 )}
                 <div>
-                  <div className="text-sm font-medium" style={{ color: 'var(--text)' }}>{t.name}</div>
-                  <div className="text-xs" style={{ color: 'var(--muted)' }}>{t.role}</div>
+                  <div className="text-sm font-medium" style={{ color: 'var(--gold)' }}>{t.name}</div>
+                  <div className="text-xs" style={{ color: 'var(--gold)' }}>
+                    {t.role}
+                  </div>
                 </div>
               </div>
             </div>

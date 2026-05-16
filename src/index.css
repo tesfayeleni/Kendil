@@ -18,8 +18,8 @@
      • Muted:       Subdued body text    → #8A8A8A
    ════════════════════════════════════════════════════════ */
 :root {
-  --black:       #343438;
-  --panel-dark:  #3A3A40;
+  --black:       #3b3a3a;
+  --panel-dark:  #2E221E;
   --panel-mid:   #1A1A1A;
   --panel-light: #242424;
 
